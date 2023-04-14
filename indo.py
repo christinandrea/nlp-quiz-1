@@ -24,15 +24,15 @@ for i in indoFiles:
             if words not in stopword:
                 indoToken.append(words)
         
-        uni_b = {}
+        wordFreq = {}
 
         for x in indoToken:
-            if x not in uni_b:
-                uni_b[x] = 1
+            if x not in wordFreq:
+                wordFreq[x] = 1
             else:
-                uni_b[x] += 1
+                wordFreq[x] += 1
 
-        for words,freq in uni_b.items():
+        for words,freq in wordFreq.items():
             print("{} : {}".format(words,freq))
            
         
