@@ -1,7 +1,5 @@
 import os 
 import nltk
-# cle
-
 from nltk import * 
 from nltk.corpus import stopwords
 
@@ -33,7 +31,6 @@ for i in indoFiles:
                 uni_b[x] = 1
             else:
                 uni_b[x] += 1
-
 
         for words,freq in uni_b.items():
             print("{} : {}".format(words,freq))
