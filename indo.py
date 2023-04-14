@@ -34,7 +34,11 @@ for i in indoFiles:
             else:
                 uni_b[x] += 1
 
-        print(uni_b)
+
+        for words,freq in uni_b.items():
+            print("{} : {}".format(words,freq))
+           
+        
 
         
 
