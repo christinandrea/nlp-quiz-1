@@ -2,6 +2,10 @@ import os
 import nltk
 from nltk import * 
 from nltk.corpus import stopwords
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer
+import pandas 
+import matplotlib as plt
 
 
 indo = os.chdir('indo')
@@ -24,16 +28,20 @@ for i in indoFiles:
             if words not in stopword:
                 indoToken.append(words)
         
+        # countVector = TfidfTransformer()
+        # wordCountVector = countVector.fit_transform(indoToken)
+        # idf = pandas.DataFrame({"feature: ":countVector.get_feature_names_out(),'idf_weights':countVector.idf_})
+
+        # print(idf)
+        
         wordFreq = {}
 
-        for x in indoToken:
-            if x not in wordFreq:
-                wordFreq[x] = 1
-            else:
-                wordFreq[x] += 1
-
-        for words,freq in wordFreq.items():
+        for words,freq in wordFreq.most_common(25):
             print("{} : {}".format(words,freq))
+
+
+
+    
            
         
 
